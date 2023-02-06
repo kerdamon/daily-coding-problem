@@ -3,6 +3,12 @@ Took me: 36 min 30 sec for solve_method_1 to work properly, but went through sol
 '''
 
 def solve_method_1(input, k):
+    '''
+    n is length of input data
+    Time complexity: O(n*log(n)) since sorting list is most expensive operation
+    Space complexity: O(1)
+    '''
+
     input = sorted(input)
 
     l = 0
@@ -25,6 +31,12 @@ def solve_method_1(input, k):
     return False
 
 def solve_method_2(input, k):
+    '''
+    n is length of input data
+    Time complexity: O(n) since there are one loop depending on n, and lookups in sets are O(1)
+    Space complexity: O(m), where m is n without duplicates, so there would be O(n) in worst case
+    '''
+
     seen = set(input[:1])
     for elem in input:
         if (k - elem) in seen:
